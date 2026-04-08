@@ -1,7 +1,5 @@
 package de.claudioaltamura.java.archunit;
 
-// @SpringBootTest
-
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 import com.tngtech.archunit.core.importer.ImportOption;
@@ -30,11 +28,13 @@ class JavaArchUnitApplicationArchitectureTests {
           .because("easy to find");
 
   @ArchTest
-  public static final ArchRule PACKAGE_STRUCTURE_CONFIGGURATION =
+  public static final ArchRule PACKAGE_STRUCTURE_CONFIGURATION =
       classes()
           .that()
           .areAnnotatedWith(Configuration.class)
           .should()
           .resideInAPackage("..configuration..")
           .because("that's the right place");
+
+
 }
